@@ -322,6 +322,7 @@ class TestRedirectHandlerSshHint:
         """
         import tools.mcp_oauth as mco
         monkeypatch.setattr(mco, "_oauth_port", 49203)
+        monkeypatch.setattr(mco, "_is_interactive", lambda: True)
         monkeypatch.setenv("SSH_CLIENT", "1.2.3.4 1234 22")
         monkeypatch.setattr(mco, "_can_open_browser", lambda: False)
 
@@ -342,6 +343,7 @@ class TestRedirectHandlerSshHint:
         """Off SSH, a configured redirect_uri prints no remote-session hint."""
         import tools.mcp_oauth as mco
         monkeypatch.setattr(mco, "_oauth_port", 49204)
+        monkeypatch.setattr(mco, "_is_interactive", lambda: True)
         monkeypatch.delenv("SSH_CLIENT", raising=False)
         monkeypatch.delenv("SSH_TTY", raising=False)
         monkeypatch.setattr(mco, "_can_open_browser", lambda: True)
@@ -831,6 +833,48 @@ def test_resolve_redirect_uri_empty_string_falls_back():
     from tools.mcp_oauth import _resolve_redirect_uri
 
     assert _resolve_redirect_uri({"redirect_uri": ""}, 5678) == "http://127.0.0.1:5678/callback"
+
+
+def test_resolve_redirect_uri_redirect_host_localhost():
+    """``redirect_host: localhost`` swaps only the loopback hostname (WAF-safe)."""
+    from tools.mcp_oauth import _resolve_redirect_uri
+
+    assert (
+        _resolve_redirect_uri({"redirect_host": "localhost"}, 1234)
+        == "http://localhost:1234/callback"
+    )
+
+
+def test_resolve_redirect_uri_full_uri_wins_over_redirect_host():
+    """An explicit redirect_uri takes precedence over redirect_host."""
+    from tools.mcp_oauth import _resolve_redirect_uri
+
+    cfg = {"redirect_uri": _PROXY_REDIRECT, "redirect_host": "localhost"}
+    assert _resolve_redirect_uri(cfg, 1234) == _PROXY_REDIRECT
+
+
+def test_resolve_redirect_uri_empty_redirect_host_falls_back():
+    """An empty redirect_host is treated as unset (YAML ``redirect_host:``)."""
+    from tools.mcp_oauth import _resolve_redirect_uri
+
+    assert (
+        _resolve_redirect_uri({"redirect_host": ""}, 9012)
+        == "http://127.0.0.1:9012/callback"
+    )
+
+
+def test_build_client_metadata_uses_redirect_host():
+    """redirect_host flows into the client metadata's redirect_uris."""
+    pytest.importorskip("mcp")
+    from tools.mcp_oauth import _build_client_metadata, _configure_callback_port
+
+    cfg = {"redirect_host": "localhost"}
+    port = _configure_callback_port(cfg)
+    md = _build_client_metadata(cfg)
+
+    assert [str(u).rstrip("/") for u in md.redirect_uris] == [
+        f"http://localhost:{port}/callback"
+    ]
 
 
 def test_build_client_metadata_uses_configured_redirect_uri():
