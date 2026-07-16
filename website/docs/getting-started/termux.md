@@ -51,7 +51,7 @@ That does not stop Rayovin from working well as a phone-native CLI agent — it 
 Rayovin now ships a Termux-aware installer path:
 
 ```bash
-curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 ```
 
 On Termux, the installer automatically:

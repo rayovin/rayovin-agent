@@ -18,7 +18,7 @@ class TestBuildOrHeaders:
         from agent.auxiliary_client import build_or_headers
 
         headers = build_or_headers(or_config={"response_cache": False})
-        assert headers["HTTP-Referer"] == "https://rayovin-agent.rayovin.com"
+        assert headers["HTTP-Referer"] == "https://rayovin.github.io/rayovin-agent"
         assert headers["X-Title"] == "Rayovin Agent"
         assert headers["X-OpenRouter-Categories"] == "productivity,cli-agent"
 

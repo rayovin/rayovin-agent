@@ -48,21 +48,21 @@ Pick the row that matches your goal:
 
 ## 1. Install Rayovin Agent
 ### With the Rayovin Desktop installer on macOS or Windows (recommended)
-To easily install the command-line and desktop applications, [download the Rayovin Desktop installer](https://rayovin-agent.rayovin.com/) from our website and run it.
+To easily install the command-line and desktop applications, [download the Rayovin Desktop installer](https://rayovin.github.io/rayovin-agent/) from our website and run it.
 
 ### Without Rayovin Desktop:
 For a command-line only install without Rayovin Desktop, run:
 
 #### Linux / macOS / WSL2 / Android (Termux)
 ```bash
-curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 ```
 
 #### Windows (native)
 
 Run in powershell:
 ```powershell
-iex (irm https://rayovin-agent.rayovin.com/install.ps1) 
+iex (irm https://rayovin.github.io/rayovin-agent/install.ps1) 
 ```
 
 :::tip Android / Termux

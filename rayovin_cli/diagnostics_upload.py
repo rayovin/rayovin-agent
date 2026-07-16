@@ -28,7 +28,7 @@ import urllib.request
 # Overridable via env so the feature can be pointed at staging / a local dev
 # NAS instance during testing.
 NAS_BASE = os.environ.get(
-    "RAYOVIN_DIAGNOSTICS_BASE_URL", "https://portal.rayovin.com"
+    "RAYOVIN_DIAGNOSTICS_BASE_URL", "https://github.com/rayovin/rayovin-agent"
 )
 
 # Network timeout for each request (seconds). The upload itself can be larger

@@ -36,7 +36,7 @@ def _mint(priv, claims):
 
 
 AUD = "agent:inst-123"
-ISS = "https://portal.rayovin.com"
+ISS = "https://github.com/rayovin/rayovin-agent"
 
 
 def _base_claims(**over):
@@ -163,7 +163,7 @@ def test_jwks_url_path_resolves_key(rsa_keys, monkeypatch):
 
     class FakeJWKClient:
         def __init__(self, url):
-            assert url == "https://portal.rayovin.com/.well-known/jwks.json"
+            assert url == "https://github.com/rayovin/rayovin-agent/.well-known/jwks.json"
 
         def get_signing_key_from_jwt(self, tok):
             return FakeKey()
@@ -173,7 +173,7 @@ def test_jwks_url_path_resolves_key(rsa_keys, monkeypatch):
     monkeypatch.setattr(verify_mod, "_JWK_CLIENTS", {})
     claims = verify_nas_fire_token(
         token=token, expected_audience=AUD,
-        jwks_or_key="https://portal.rayovin.com/.well-known/jwks.json",
+        jwks_or_key="https://github.com/rayovin/rayovin-agent/.well-known/jwks.json",
         issuer=ISS,
     )
     assert claims is not None and claims["purpose"] == "cron_fire"
@@ -195,7 +195,7 @@ def test_jwks_client_is_cached_across_calls(rsa_keys, monkeypatch):
     from plugins.cron_providers.chronos.verify import verify_nas_fire_token
 
     priv, pub = rsa_keys
-    url = "https://portal.rayovin.com/.well-known/jwks.json"
+    url = "https://github.com/rayovin/rayovin-agent/.well-known/jwks.json"
 
     counters = {"construct": 0, "fetch": 0}
 

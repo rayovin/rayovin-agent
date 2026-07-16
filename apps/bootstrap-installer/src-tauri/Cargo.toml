@@ -2,7 +2,7 @@
 name = "rayovin-bootstrap"
 version = "0.0.1"
 description = "Rayovin Setup — signed installer that drives scripts/install.ps1"
-authors = ["نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) <info@rayovin.com>"]
+authors = ["نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) <info@github.com/rayovin/rayovin-agent>"]
 edition = "2021"
 rust-version = "1.77"
 

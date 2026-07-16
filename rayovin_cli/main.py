@@ -6001,7 +6001,7 @@ def _print_curator_first_run_notice() -> None:
     print("  Preview now:  rayovin curator run --dry-run")
     print("  Pause it:     rayovin curator pause")
     print(
-        "  Docs:         https://rayovin-agent.rayovin.com/docs/user-guide/features/curator"
+        "  Docs:         https://rayovin.github.io/rayovin-agent/user-guide/features/curator"
     )
 
 
@@ -9730,7 +9730,7 @@ def _cmd_update_impl(args, gateway_mode: bool):
                 return
             print("✗ Not a git repository. Please reinstall:")
             print(
-                "  curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash"
+                "  curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash"
             )
             sys.exit(1)
 
@@ -12119,7 +12119,7 @@ def _maybe_setup_dashboard_auth_interactively(args) -> None:
             "    rayovin dashboard register\n"
             "  It provisions a Nous Portal OAuth client and writes "
             "RAYOVIN_DASHBOARD_OAUTH_CLIENT_ID into ~/.rayovin/.env for you.\n"
-            "  Docs: https://rayovin-agent.rayovin.com/docs/"
+            "  Docs: https://rayovin.github.io/rayovin-agent/"
             "user-guide/features/web-dashboard#authentication-gated-mode"
         )
         sys.exit(0)
@@ -13099,7 +13099,7 @@ def main():
             "Manage the fallback provider chain.  Fallback providers are tried "
             "in order when the primary model fails with rate-limit, overload, or "
             "connection errors.  See: "
-            "https://rayovin-agent.rayovin.com/docs/user-guide/features/fallback-providers"
+            "https://rayovin.github.io/rayovin-agent/user-guide/features/fallback-providers"
         ),
     )
     fallback_subparsers = fallback_parser.add_subparsers(dest="fallback_command")
@@ -13133,7 +13133,7 @@ def main():
             "Pull API keys from an external secret manager at process startup "
             "instead of storing them in ~/.rayovin/.env.  Supports Bitwarden "
             "Secrets Manager and 1Password.  See: "
-            "https://rayovin-agent.rayovin.com/docs/user-guide/secrets/"
+            "https://rayovin.github.io/rayovin-agent/user-guide/secrets/"
         ),
     )
     secrets_subparsers = secrets_parser.add_subparsers(dest="secrets_command")

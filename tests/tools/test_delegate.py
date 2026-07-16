@@ -1421,7 +1421,7 @@ class TestDelegationProviderIntegration(unittest.TestCase):
         }
         parent = _make_mock_parent(depth=0)
         parent.provider = "nous"
-        parent.base_url = "https://inference-api.rayovin.com/v1"
+        parent.base_url = "https://api.github.com/rayovin/rayovin-agent (future)/v1"
         parent.api_key = "nous-key-abc"
 
         with patch("run_agent.AIAgent") as MockAgent:

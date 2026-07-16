@@ -571,7 +571,7 @@ def recommended_update_command() -> str:
 # banner, the TUI/desktop session info panel, and ``rayovin update``. NixOS
 # stays fully supported (Tier 2) and must never hit this path.
 
-PLATFORM_SUPPORT_DOCS_URL = "https://rayovin-agent.rayovin.com/docs/getting-started/platform-support"
+PLATFORM_SUPPORT_DOCS_URL = "https://rayovin.github.io/rayovin-agent/getting-started/platform-support"
 
 _UNSUPPORTED_INSTALL_METHODS = frozenset({"pip", "homebrew"})
 
@@ -2019,7 +2019,7 @@ DEFAULT_CONFIG = {
         # touch config.yaml. Local dev / non-Fly deploys can set either
         # surface; missing values fall through to the plugin's defaults
         # (no provider registered when ``client_id`` is empty;
-        # ``portal_url`` defaults to https://portal.rayovin.com).
+        # ``portal_url`` defaults to https://github.com/rayovin/rayovin-agent).
         "oauth": {
             "client_id": "",  # agent:{instance_id} — Portal provisions this
             "portal_url": "",  # blank → use plugin default (production Portal)
@@ -2699,7 +2699,7 @@ DEFAULT_CONFIG = {
         "chronos": {
             # NAS / portal base URL the agent calls to arm/cancel one-shots
             # and that mints the inbound fire JWT (used as the expected issuer).
-            "portal_url": "https://portal.rayovin.com",
+            "portal_url": "https://github.com/rayovin/rayovin-agent",
             # The agent's OWN publicly-reachable base URL for NAS→agent fires
             # (NAS POSTs {callback_url}/api/cron/fire). Empty → Chronos is
             # unavailable and the resolver falls back to the built-in ticker.
@@ -2873,7 +2873,7 @@ DEFAULT_CONFIG = {
     # The default URL is served by the docs site GitHub Pages deploy.
     "model_catalog": {
         "enabled": True,
-        "url": "https://rayovin-agent.rayovin.com/docs/api/model-catalog.json",
+        "url": "https://rayovin.github.io/rayovin-agent/api/model-catalog.json",
         # Disk cache TTL in hours.  Beyond this, the CLI refetches on the
         # next /model or `rayovin model` invocation; network failures
         # silently fall back to the stale cache.
@@ -3833,7 +3833,7 @@ OPTIONAL_ENV_VARS = {
         "advanced": True,
     },
     "TOOL_GATEWAY_DOMAIN": {
-        "description": "Shared tool-gateway domain suffix for Nous Subscribers only, used to derive vendor hosts, e.g. rayovin.com -> firecrawl-gateway.rayovin.com",
+        "description": "Shared tool-gateway domain suffix for Nous Subscribers only, used to derive vendor hosts, e.g. github.com/rayovin/rayovin-agent -> firecrawl-gateway.github.com/rayovin/rayovin-agent",
         "prompt": "Tool-gateway domain suffix",
         "url": None,
         "password": False,

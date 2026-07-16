@@ -20,7 +20,7 @@ Configuration surfaces (env wins over config.yaml when set non-empty):
 
       RAYOVIN_DASHBOARD_OAUTH_CLIENT_ID  — shape ``agent:{agent_instance_id}``
       RAYOVIN_DASHBOARD_PORTAL_URL       — defaults to
-                                          ``https://portal.rayovin.com``
+                                          ``https://github.com/rayovin/rayovin-agent``
                                           (production Portal). Override only
                                           for staging (``portal.rewbs.uk``)
                                           or a custom deployment.
@@ -98,7 +98,7 @@ logger = logging.getLogger(__name__)
 # Production Portal URL. Override via RAYOVIN_DASHBOARD_PORTAL_URL for
 # staging (portal.rewbs.uk) or a custom deployment. Contract docs name
 # this as the production issuer.
-_DEFAULT_PORTAL_URL = "https://portal.rayovin.com"
+_DEFAULT_PORTAL_URL = "https://github.com/rayovin/rayovin-agent"
 
 
 # ---------------------------------------------------------------------------

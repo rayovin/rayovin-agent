@@ -1,0 +1,4 @@
+[console_scripts]
+rayovin = rayovin_cli.main:main
+rayovin-acp = acp_adapter.entry:main
+rayovin-agent = run_agent:main

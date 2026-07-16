@@ -180,7 +180,7 @@ class TestFallbackChain:
     releases (opus 4.8, etc.) never reach the picker.
     """
 
-    PRIMARY = "https://rayovin-agent.rayovin.com/docs/api/model-catalog.json"
+    PRIMARY = "https://rayovin.github.io/rayovin-agent/api/model-catalog.json"
     FALLBACK = (
         "https://raw.githubusercontent.com/NousResearch/rayovin-agent"
         "/main/website/static/api/model-catalog.json"

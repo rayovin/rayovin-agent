@@ -257,7 +257,7 @@
     ctx.fillStyle = "#8b95a8";
     ctx.font = "600 20px ui-monospace, 'SF Mono', Menlo, monospace";
     ctx.textBaseline = "bottom";
-    ctx.fillText("RAYOVIN AGENT  ·  rayovin-agent.rayovin.com", 70, H - 40);
+    ctx.fillText("RAYOVIN AGENT  ·  rayovin.github.io/rayovin-agent", 70, H - 40);
 
     // "UNLOCKED" stamp upper-right
     ctx.textBaseline = "top";
@@ -339,7 +339,7 @@
         tier_part: tierPart,
         name: achievement.name,
       });
-      return tmpl + "\n\n@NousResearch · https://rayovin-agent.rayovin.com";
+      return tmpl + "\n\n@NousResearch · https://rayovin.github.io/rayovin-agent";
     }
 
     function shareOnX() {

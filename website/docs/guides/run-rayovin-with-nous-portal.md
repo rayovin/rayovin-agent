@@ -6,7 +6,7 @@ description: "Start-to-finish walkthrough: subscribe, set up, switch models, ena
 
 # Run Rayovin Agent with Nous Portal
 
-This guide walks you through running Rayovin Agent on a [Nous Portal](https://portal.rayovin.com) subscription end to end — from signing up to verifying that every tool routes correctly. If you just want the overview of what the Portal is and what's in the subscription, see the [Nous Portal integration page](/integrations/nous-portal). This page is the task script.
+This guide walks you through running Rayovin Agent on a [Nous Portal](https://github.com/rayovin/rayovin-agent) subscription end to end — from signing up to verifying that every tool routes correctly. If you just want the overview of what the Portal is and what's in the subscription, see the [Nous Portal integration page](/integrations/nous-portal). This page is the task script.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ You do **not** need: an OpenAI key, an Anthropic key, a Firecrawl account, a FAL
 
 ## 1. Get a subscription
 
-Open [portal.rayovin.com/manage-subscription](https://portal.rayovin.com/manage-subscription), sign up, and pick a plan.
+Open [github.com/rayovin/rayovin-agent/manage-subscription](https://github.com/rayovin/rayovin-agent/manage-subscription), sign up, and pick a plan.
 
 Already subscribed? Skip to step 2.
 
@@ -30,7 +30,7 @@ rayovin setup --portal
 
 This single command does five things:
 
-1. Opens your browser to portal.rayovin.com for OAuth login
+1. Opens your browser to github.com/rayovin/rayovin-agent for OAuth login
 2. Stores the refresh token at `~/.rayovin/auth.json`
 3. Sets `model.provider: nous` in `~/.rayovin/config.yaml`
 4. Picks a default agentic model (`anthropic/claude-sonnet-4.6` or similar)
@@ -66,7 +66,7 @@ You should see:
   Nous Portal
   ───────────
   Auth:    ✓ logged in
-  Portal:  https://portal.rayovin.com
+  Portal:  https://github.com/rayovin/rayovin-agent
   Model:   ✓ using Nous as inference provider
 
   Tool Gateway
@@ -120,9 +120,9 @@ rayovin config set model.default anthropic/claude-sonnet-4.6
 
 ### Don't pick Rayovin-4 for agent work
 
-Rayovin-4-70B and Rayovin-4-405B are available on the Portal at deep discounts, but they're **chat/reasoning models**, not tool-call-tuned. They will struggle with multi-step agent loops. Use them via [Nous Chat](https://chat.rayovin.com) for conversation/research work, or through the [subscription proxy](/user-guide/features/subscription-proxy) from non-agent tools. For Rayovin Agent itself, stick to the frontier agentic models above.
+Rayovin-4-70B and Rayovin-4-405B are available on the Portal at deep discounts, but they're **chat/reasoning models**, not tool-call-tuned. They will struggle with multi-step agent loops. Use them via [Nous Chat](https://chat.github.com/rayovin/rayovin-agent) for conversation/research work, or through the [subscription proxy](/user-guide/features/subscription-proxy) from non-agent tools. For Rayovin Agent itself, stick to the frontier agentic models above.
 
-The Portal's own [info page](https://portal.rayovin.com/info) carries this warning too — it's the official Nous guidance, not just a Rayovin-side opinion.
+The Portal's own [info page](https://github.com/rayovin/rayovin-agent/info) carries this warning too — it's the official Nous guidance, not just a Rayovin-side opinion.
 
 ## 6. (Optional) Customize Tool Gateway routing
 

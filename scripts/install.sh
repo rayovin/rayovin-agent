@@ -6,7 +6,7 @@
 # Uses uv for desktop/server installs and Python's stdlib venv + pip on Termux.
 #
 # Usage:
-#   curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+#   curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 #
 # Or with options:
 #   curl -fsSL ... | bash -s -- --no-venv --skip-setup
@@ -527,7 +527,7 @@ detect_os() {
             OS="windows"
             DISTRO="windows"
             log_error "Windows detected. Please use the PowerShell installer:"
-            log_info "  iex (irm https://rayovin-agent.rayovin.com/install.ps1)"
+            log_info "  iex (irm https://rayovin.github.io/rayovin-agent/install.ps1)"
             exit 1
             ;;
         *)

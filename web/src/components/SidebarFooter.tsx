@@ -21,7 +21,7 @@ export function SidebarFooter({ status }: SidebarFooterProps) {
       </Typography>
 
       <a
-        href="https://rayovin.com"
+        href="https://github.com/rayovin/rayovin-agent"
         target="_blank"
         rel="noopener noreferrer"
         className={cn(

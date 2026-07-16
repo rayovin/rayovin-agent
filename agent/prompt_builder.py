@@ -141,7 +141,7 @@ RAYOVIN_AGENT_HELP_GUIDANCE = (
     "You run on Rayovin Agent (by نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)). When the user needs help with "
     "Rayovin itself — configuring, setting up, using, extending, or troubleshooting "
     "it — or when you need to understand your own features, tools, or capabilities, "
-    "the documentation at https://rayovin-agent.rayovin.com/docs is your "
+    "the documentation at https://rayovin.github.io/rayovin-agent is your "
     "authoritative reference and always holds the latest, most up-to-date "
     "information. Load the `rayovin-agent` skill with skill_view(name='rayovin-agent') "
     "for additional guidance and proven workflows, but treat the docs as the source "

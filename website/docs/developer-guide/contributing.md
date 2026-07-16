@@ -49,7 +49,7 @@ development environment on the same layout the CLI, updater, lazy dependency
 installer, gateway, and docs assume.
 
 ```bash
-curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 cd "${RAYOVIN_HOME:-$HOME/.rayovin}/rayovin-agent"
 
 # Add dev/test extras on top of the standard install.

@@ -246,7 +246,7 @@
     },
     "linux": {
       "category": "Development",
-      "maintainer": "نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) <support@rayovin.com>",
+      "maintainer": "نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) <support@github.com/rayovin/rayovin-agent>",
       "synopsis": "Native desktop shell for Rayovin Agent.",
       "target": [
         "AppImage",

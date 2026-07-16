@@ -9,8 +9,8 @@ Outputs:
                                     comments separating files.
 
 Both publish at:
-  https://rayovin-agent.rayovin.com/docs/llms.txt
-  https://rayovin-agent.rayovin.com/docs/llms-full.txt
+  https://rayovin.github.io/rayovin-agent/llms.txt
+  https://rayovin.github.io/rayovin-agent/llms-full.txt
 
 The `/docs/` prefix is not a mistake — Docusaurus serves `website/static/`
 at the `docs/` base path. Clients and IDE plugins that probe the classic
@@ -31,7 +31,7 @@ WEBSITE = SCRIPT_DIR.parent
 DOCS = WEBSITE / "docs"
 STATIC = WEBSITE / "static"
 
-SITE_BASE = "https://rayovin-agent.rayovin.com/docs"
+SITE_BASE = "https://rayovin.github.io/rayovin-agent"
 
 # Curated sections for llms.txt — mirrors the product story, not the filesystem.
 # Each entry: (docs-relative path without .md, display title, optional short desc).
@@ -248,8 +248,8 @@ def emit_llms_full() -> str:
             "Started, Using Rayovin, Features, Messaging, Integrations, Guides, "
             "Developer Guide, Reference, then everything else.\n"
         ),
-        "Canonical site: https://rayovin-agent.rayovin.com/docs\n",
-        "Short index: https://rayovin-agent.rayovin.com/docs/llms.txt\n",
+        "Canonical site: https://rayovin.github.io/rayovin-agent\n",
+        "Short index: https://rayovin.github.io/rayovin-agent/llms.txt\n",
         "\n---\n\n",
     ]
 

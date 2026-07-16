@@ -127,7 +127,7 @@ A nightly backlog triage on Sonnet costs roughly $0.02-0.05. A monitoring check 
 Rayovin Agent is open source and free. The automation infrastructure — cron scheduler, webhook platform, skill system, multi-platform delivery — is built in.
 
 ```bash
-curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 rayovin setup
 ```
 
@@ -149,12 +149,12 @@ rayovin webhook subscribe pr-review \
   --deliver github_comment
 ```
 
-Full automation blueprints gallery: [rayovin-agent.rayovin.com/docs/reference/automation-blueprints-catalog](https://rayovin-agent.rayovin.com/docs/reference/automation-blueprints-catalog)
+Full automation blueprints gallery: [rayovin.github.io/rayovin-agent/reference/automation-blueprints-catalog](https://rayovin.github.io/rayovin-agent/reference/automation-blueprints-catalog)
 
-Documentation: [rayovin-agent.rayovin.com](https://rayovin-agent.rayovin.com)
+Documentation: [rayovin.github.io/rayovin-agent](https://rayovin.github.io/rayovin-agent)
 
 GitHub: [github.com/NousResearch/rayovin-agent](https://github.com/NousResearch/rayovin-agent)
 
 ---
 
-*Rayovin Agent is built by [نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)](https://rayovin.com). Open source, model-agnostic, runs on your infrastructure.*
+*Rayovin Agent is built by [نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)](https://github.com/rayovin/rayovin-agent). Open source, model-agnostic, runs on your infrastructure.*

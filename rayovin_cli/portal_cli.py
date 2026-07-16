@@ -26,9 +26,9 @@ import webbrowser
 from rayovin_cli.colors import Colors, color
 from rayovin_cli.config import load_config
 
-DEFAULT_PORTAL_URL = "https://portal.rayovin.com"
-SUBSCRIPTION_URL = "https://portal.rayovin.com/manage-subscription"
-DOCS_URL = "https://rayovin-agent.rayovin.com/docs/user-guide/features/tool-gateway"
+DEFAULT_PORTAL_URL = "https://github.com/rayovin/rayovin-agent"
+SUBSCRIPTION_URL = "https://github.com/rayovin/rayovin-agent/manage-subscription"
+DOCS_URL = "https://rayovin.github.io/rayovin-agent/user-guide/features/tool-gateway"
 
 
 def _cmd_status(args) -> int:

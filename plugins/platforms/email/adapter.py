@@ -141,7 +141,7 @@ def _send_imap_id(imap: "imaplib.IMAP4") -> None:
             "ID",
             f'("name" "rayovin-agent" "version" "{_rayovin_version}" '
             '"vendor" "NousResearch" '
-            '"support-email" "noreply@rayovin.com")',
+            '"support-email" "noreply@github.com/rayovin/rayovin-agent")',
         )
     except Exception as e:  # noqa: BLE001 — best-effort, never fatal
         logger.debug("[Email] IMAP ID command not accepted: %s", e)

@@ -32,7 +32,7 @@ import urllib.parse
 import urllib.request
 from typing import Any, Optional
 
-DEFAULT_PORTAL_BASE_URL = "https://portal.rayovin.com"
+DEFAULT_PORTAL_BASE_URL = "https://github.com/rayovin/rayovin-agent"
 
 # Default HTTP timeout (seconds). Charge/poll calls are quick; keep this tight so
 # a hung portal doesn't freeze the TUI.

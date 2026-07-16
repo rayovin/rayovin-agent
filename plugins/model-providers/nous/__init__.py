@@ -46,12 +46,12 @@ nous = NousProfile(
     env_vars=("NOUS_API_KEY",),
     display_name="نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)",
     description="نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) — Rayovin model family",
-    signup_url="https://rayovin.com/",
+    signup_url="https://github.com/rayovin/rayovin-agent/",
     fallback_models=(
         "rayovin-3-405b",
         "rayovin-3-70b",
     ),
-    base_url="https://inference-api.rayovin.com/v1",
+    base_url="https://api.github.com/rayovin/rayovin-agent (future)/v1",
     auth_type="oauth_device_code",
 )
 

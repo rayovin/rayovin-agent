@@ -4,7 +4,7 @@ _ALLOWED_NOUS_INFERENCE_HOSTS treatment.
 
 Real incident (2026-07): a hosted agent provisioned by nous-account-service
 on the `staging` Vercel environment is stamped with
-``RAYOVIN_PORTAL_BASE_URL=https://portal.staging-rayovin.com`` in its
+``RAYOVIN_PORTAL_BASE_URL=https://portal.staging-github.com/rayovin/rayovin-agent`` in its
 container env (the documented dev/staging override), while its bootstrap
 ``auth.json`` ALSO persists ``portal_base_url`` to the same staging host.
 
@@ -46,20 +46,20 @@ class TestPortalEnvOverrideHelper:
 
     def test_rayovin_portal_base_url_wins(self, monkeypatch):
         monkeypatch.setenv(
-            "RAYOVIN_PORTAL_BASE_URL", "https://portal.staging-rayovin.com/"
+            "RAYOVIN_PORTAL_BASE_URL", "https://portal.staging-github.com/rayovin/rayovin-agent/"
         )
         monkeypatch.delenv("NOUS_PORTAL_BASE_URL", raising=False)
         assert (
-            _nous_portal_env_override() == "https://portal.staging-rayovin.com"
+            _nous_portal_env_override() == "https://portal.staging-github.com/rayovin/rayovin-agent"
         )
 
     def test_nous_portal_base_url_used_as_fallback(self, monkeypatch):
         monkeypatch.delenv("RAYOVIN_PORTAL_BASE_URL", raising=False)
         monkeypatch.setenv(
-            "NOUS_PORTAL_BASE_URL", "https://portal.staging-rayovin.com"
+            "NOUS_PORTAL_BASE_URL", "https://portal.staging-github.com/rayovin/rayovin-agent"
         )
         assert (
-            _nous_portal_env_override() == "https://portal.staging-rayovin.com"
+            _nous_portal_env_override() == "https://portal.staging-github.com/rayovin/rayovin-agent"
         )
 
     def test_env_override_not_gated_by_allowlist(self, monkeypatch):
@@ -67,11 +67,11 @@ class TestPortalEnvOverrideHelper:
         _NOUS_PORTAL_ALLOWED_HOSTS, and the helper must return it anyway —
         gating happens only for network-provenance values."""
         monkeypatch.setenv(
-            "RAYOVIN_PORTAL_BASE_URL", "https://portal.staging-rayovin.com"
+            "RAYOVIN_PORTAL_BASE_URL", "https://portal.staging-github.com/rayovin/rayovin-agent"
         )
-        assert "portal.staging-rayovin.com" not in _NOUS_PORTAL_ALLOWED_HOSTS
+        assert "portal.staging-github.com/rayovin/rayovin-agent" not in _NOUS_PORTAL_ALLOWED_HOSTS
         assert (
-            _nous_portal_env_override() == "https://portal.staging-rayovin.com"
+            _nous_portal_env_override() == "https://portal.staging-github.com/rayovin/rayovin-agent"
         )
 
 
@@ -134,7 +134,7 @@ class TestResolveAccessTokenEnvOverrideWins:
         allowlist-rejection warning must never fire."""
         import rayovin_cli.auth as auth
 
-        staging_portal = "https://portal.staging-rayovin.com"
+        staging_portal = "https://portal.staging-github.com/rayovin/rayovin-agent"
         monkeypatch.setenv("RAYOVIN_HOME", str(tmp_path))
         monkeypatch.setenv("RAYOVIN_PORTAL_BASE_URL", staging_portal)
         self._write_auth_file(tmp_path, stored_portal_url=staging_portal)
@@ -152,7 +152,7 @@ class TestResolveAccessTokenEnvOverrideWins:
         win for the actual refresh call."""
         import rayovin_cli.auth as auth
 
-        staging_portal = "https://portal.staging-rayovin.com"
+        staging_portal = "https://portal.staging-github.com/rayovin/rayovin-agent"
         monkeypatch.setenv("RAYOVIN_HOME", str(tmp_path))
         monkeypatch.setenv("RAYOVIN_PORTAL_BASE_URL", staging_portal)
         self._write_auth_file(tmp_path, stored_portal_url=DEFAULT_NOUS_PORTAL_URL)
@@ -169,7 +169,7 @@ class TestResolveAccessTokenEnvOverrideWins:
         allowlist's actual job — preserved, not regressed, by this fix)."""
         import rayovin_cli.auth as auth
 
-        staging_portal = "https://portal.staging-rayovin.com"
+        staging_portal = "https://portal.staging-github.com/rayovin/rayovin-agent"
         monkeypatch.setenv("RAYOVIN_HOME", str(tmp_path))
         monkeypatch.delenv("RAYOVIN_PORTAL_BASE_URL", raising=False)
         monkeypatch.delenv("NOUS_PORTAL_BASE_URL", raising=False)

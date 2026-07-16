@@ -4,7 +4,7 @@
   "version": "0.18.2",
   "description": "Self-improving open-source AI agent by نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) with ACP editor integration, persistent memory, skills, and rich tool support.",
   "repository": "https://github.com/NousResearch/rayovin-agent",
-  "website": "https://rayovin-agent.rayovin.com/docs/user-guide/features/acp",
+  "website": "https://rayovin.github.io/rayovin-agent/user-guide/features/acp",
   "authors": ["نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)"],
   "license": "MIT",
   "distribution": {

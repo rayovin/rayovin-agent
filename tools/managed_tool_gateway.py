@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 from rayovin_constants import get_rayovin_home
 from tools.tool_backend_helpers import managed_nous_tools_enabled
 
-_DEFAULT_TOOL_GATEWAY_DOMAIN = "rayovin.com"
+_DEFAULT_TOOL_GATEWAY_DOMAIN = "github.com/rayovin/rayovin-agent"
 _DEFAULT_TOOL_GATEWAY_SCHEME = "https"
 _NOUS_ACCESS_TOKEN_REFRESH_SKEW_SECONDS = 120
 

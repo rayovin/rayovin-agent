@@ -6,7 +6,7 @@ description: "One subscription, 300+ frontier models, the Tool Gateway, and Nous
 
 # Nous Portal
 
-[Nous Portal](https://portal.rayovin.com) is نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)'s unified subscription gateway and **the recommended way to run Rayovin Agent**. One OAuth login replaces the juggling act of separate accounts, API keys, and billing relationships across every model lab, search API, image generator, and browser provider you'd otherwise need to wire up by hand.
+[Nous Portal](https://github.com/rayovin/rayovin-agent) is نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)'s unified subscription gateway and **the recommended way to run Rayovin Agent**. One OAuth login replaces the juggling act of separate accounts, API keys, and billing relationships across every model lab, search API, image generator, and browser provider you'd otherwise need to wire up by hand.
 
 If you only have time to set up one thing, set up this. The fastest path:
 
@@ -16,7 +16,7 @@ rayovin setup --portal
 
 That single command runs the Portal OAuth, lets you pick a Nous model, sets Nous as your inference provider in `config.yaml`, and turns on the Tool Gateway. You're ready to `rayovin chat` immediately after.
 
-Don't have a subscription yet? [portal.rayovin.com/manage-subscription](https://portal.rayovin.com/manage-subscription) — sign up, then come back and run the command above.
+Don't have a subscription yet? [github.com/rayovin/rayovin-agent/manage-subscription](https://github.com/rayovin/rayovin-agent/manage-subscription) — sign up, then come back and run the command above.
 
 ## What's in the subscription
 
@@ -62,7 +62,7 @@ You can also enable just specific gateway tools (e.g. web search but not image g
 
 ### Nous Chat
 
-Your Portal account also covers [chat.rayovin.com](https://chat.rayovin.com) — نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)'s web chat interface with the same model catalog. Useful when you're away from your terminal, or for non-agent conversation work.
+Your Portal account also covers [chat.github.com/rayovin/rayovin-agent](https://chat.github.com/rayovin/rayovin-agent) — نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)'s web chat interface with the same model catalog. Useful when you're away from your terminal, or for non-agent conversation work.
 
 ### No credentials in your dotfiles
 
@@ -76,7 +76,7 @@ Because everything routes through one OAuth-authenticated Portal session, you do
 
 نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)'s own **Rayovin 4** family (Rayovin-4-70B, Rayovin-4-405B) is available through the Portal at heavily discounted rates. These are **frontier hybrid-reasoning chat models** — strong at math, science, instruction following, schema adherence, roleplay, and long-form writing.
 
-They are **not recommended for use inside Rayovin Agent**, however. Rayovin 4 is tuned for chat and reasoning, not the rapid-fire tool-calling loop the agent relies on. Use them for [Nous Chat](https://chat.rayovin.com), for research workflows, or via the [subscription proxy](/user-guide/features/subscription-proxy) from other tooling — but for agent work, pick a frontier agentic model from the catalog instead:
+They are **not recommended for use inside Rayovin Agent**, however. Rayovin 4 is tuned for chat and reasoning, not the rapid-fire tool-calling loop the agent relies on. Use them for [Nous Chat](https://chat.github.com/rayovin/rayovin-agent), for research workflows, or via the [subscription proxy](/user-guide/features/subscription-proxy) from other tooling — but for agent work, pick a frontier agentic model from the catalog instead:
 
 ```bash
 /model anthropic/claude-sonnet-4.6     # best general-purpose agentic model
@@ -85,7 +85,7 @@ They are **not recommended for use inside Rayovin Agent**, however. Rayovin 4 is
 /model deepseek/deepseek-v4-pro        # cost-effective coder
 ```
 
-The Portal's own [model info page](https://portal.rayovin.com/info) carries the same warning, so this isn't a Rayovin-side opinion — it's the official guidance from نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob).
+The Portal's own [model info page](https://github.com/rayovin/rayovin-agent/info) carries the same warning, so this isn't a Rayovin-side opinion — it's the official guidance from نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob).
 
 ## Setup
 
@@ -97,14 +97,14 @@ rayovin setup --portal
 
 This runs the full setup in one shot:
 
-1. Opens your browser to portal.rayovin.com for OAuth login
+1. Opens your browser to github.com/rayovin/rayovin-agent for OAuth login
 2. Stores the refresh token at `~/.rayovin/auth.json`
 3. Lets you pick a Nous model from the curated list (or skip to keep your current one)
 4. Sets Nous as your inference provider in `~/.rayovin/config.yaml` (when you pick a model)
 5. Turns on the Tool Gateway (web, image, TTS, browser routing)
 6. Returns you to your terminal ready to `rayovin chat`
 
-If you don't have a subscription yet, sign up at [portal.rayovin.com/manage-subscription](https://portal.rayovin.com/manage-subscription) first.
+If you don't have a subscription yet, sign up at [github.com/rayovin/rayovin-agent/manage-subscription](https://github.com/rayovin/rayovin-agent/manage-subscription) first.
 
 ### Existing install — add Portal alongside other providers
 
@@ -146,7 +146,7 @@ rayovin portal open       # open the subscription management page in your browse
   Nous Portal
   ───────────
   Auth:    ✓ logged in
-  Portal:  https://portal.rayovin.com
+  Portal:  https://github.com/rayovin/rayovin-agent
   Model:   ✓ using Nous as inference provider
 
   Tool Gateway
@@ -199,7 +199,7 @@ The Tool Gateway is opt-in per tool, not all-or-nothing. The managed backends sh
 
 Manage your plan, view usage, or upgrade/cancel at any time:
 
-- **Web:** [portal.rayovin.com/manage-subscription](https://portal.rayovin.com/manage-subscription)
+- **Web:** [github.com/rayovin/rayovin-agent/manage-subscription](https://github.com/rayovin/rayovin-agent/manage-subscription)
 - **CLI shortcut:** `rayovin portal open` (opens the same page in your default browser)
 
 ## Configuration reference
@@ -210,7 +210,7 @@ After `rayovin setup --portal`, `~/.rayovin/config.yaml` will look like:
 model:
   provider: nous
   default: anthropic/claude-sonnet-4.6     # or whatever model you picked
-  base_url: https://inference-api.rayovin.com/v1
+  base_url: https://api.github.com/rayovin/rayovin-agent (future)/v1
 ```
 
 The Tool Gateway settings live under their respective tool sections:

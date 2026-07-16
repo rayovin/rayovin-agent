@@ -57,7 +57,7 @@ RAYOVIN_OVERLAYS: Dict[str, RayovinOverlay] = {
     "nous": RayovinOverlay(
         transport="openai_chat",
         auth_type="oauth_device_code",
-        base_url_override="https://inference-api.rayovin.com/v1",
+        base_url_override="https://api.github.com/rayovin/rayovin-agent (future)/v1",
     ),
     "openai-codex": RayovinOverlay(
         transport="codex_responses",

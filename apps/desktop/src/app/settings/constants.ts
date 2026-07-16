@@ -42,7 +42,7 @@ export const PROVIDER_GROUPS: ProviderPrefix[] = [
     prefix: 'NOUS_',
     name: 'Nous Portal',
     description: 'Hosted Rayovin & Nous-trained models',
-    docsUrl: 'https://portal.rayovin.com',
+    docsUrl: 'https://github.com/rayovin/rayovin-agent',
     priority: 0
   },
   {

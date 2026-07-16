@@ -33,7 +33,7 @@ def test_agent_json_matches_official_registry_required_fields():
     assert data["name"] == "Rayovin Agent"
     assert data["description"]
     assert data["repository"] == "https://github.com/NousResearch/rayovin-agent"
-    assert data["website"].startswith("https://rayovin-agent.rayovin.com/")
+    assert data["website"].startswith("https://rayovin.github.io/rayovin-agent/")
     assert data["authors"] == ["نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)"]
     assert data["license"] == "MIT"
     assert set(data["distribution"]) <= ALLOWED_DISTRIBUTIONS

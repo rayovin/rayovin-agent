@@ -3,7 +3,7 @@
   "updated_at": "2026-07-15T04:51:12Z",
   "metadata": {
     "source": "rayovin-agent repo",
-    "docs": "https://rayovin-agent.rayovin.com/docs/reference/model-catalog"
+    "docs": "https://rayovin.github.io/rayovin-agent/reference/model-catalog"
   },
   "providers": {
     "openrouter": {

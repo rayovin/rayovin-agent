@@ -25,7 +25,7 @@ jobs:
         id: probe
         run: |
           set -e
-          URL="https://rayovin-agent.rayovin.com/docs/api/skills-index.json"
+          URL="https://rayovin.github.io/rayovin-agent/api/skills-index.json"
           echo "Probing $URL"
           # -L follows redirects; -f fails on HTTP errors; -s suppresses progress
           if ! curl -fsSL -o /tmp/skills-index.json "$URL"; then

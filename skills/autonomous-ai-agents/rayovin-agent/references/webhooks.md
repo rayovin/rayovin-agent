@@ -83,7 +83,7 @@ rayovin webhook subscribe todoist-rayovin \
   --deliver telegram --deliver-chat-id "12345"
 ```
 
-Full filter syntax: https://rayovin-agent.rayovin.com/docs/user-guide/messaging/webhooks#payload-filters
+Full filter syntax: https://rayovin.github.io/rayovin-agent/user-guide/messaging/webhooks#payload-filters
 
 ### List subscriptions
 ```bash

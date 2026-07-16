@@ -13,7 +13,7 @@ When the manifest is unreachable (offline, network blocked, hosting failure), Ra
 ## Live manifest URL
 
 ```
-https://rayovin-agent.rayovin.com/docs/api/model-catalog.json
+https://rayovin.github.io/rayovin-agent/api/model-catalog.json
 ```
 
 Published on every merge to `main` via the existing `deploy-site.yml` GitHub Pages pipeline. The source of truth lives in the repo at `website/static/api/model-catalog.json`.
@@ -71,7 +71,7 @@ Cache location: `~/.rayovin/cache/model_catalog.json`.
 ```yaml
 model_catalog:
   enabled: true
-  url: https://rayovin-agent.rayovin.com/docs/api/model-catalog.json
+  url: https://rayovin.github.io/rayovin-agent/api/model-catalog.json
   ttl_hours: 1
   providers: {}
 ```

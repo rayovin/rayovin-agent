@@ -82,28 +82,28 @@ describe('buildToolView browser_navigate title', () => {
     const view = buildToolView(
       part({
         toolName: 'browser_navigate',
-        args: { url: 'https://rayovin-agent.rayovin.com/docs' },
+        args: { url: 'https://rayovin.github.io/rayovin-agent' },
         result: { success: false, error: 'Command timed out after 60 seconds' }
       }),
       ''
     )
 
     expect(view.status).toBe('error')
-    expect(view.title).toBe('Failed to open rayovin-agent.rayovin.com/docs')
+    expect(view.title).toBe('Failed to open rayovin.github.io/rayovin-agent')
   })
 
   it('shows opened title on success', () => {
     const view = buildToolView(
       part({
         toolName: 'browser_navigate',
-        args: { url: 'https://rayovin-agent.rayovin.com/docs' },
-        result: { success: true, url: 'https://rayovin-agent.rayovin.com/docs', title: 'Docs' }
+        args: { url: 'https://rayovin.github.io/rayovin-agent' },
+        result: { success: true, url: 'https://rayovin.github.io/rayovin-agent', title: 'Docs' }
       }),
       ''
     )
 
     expect(view.status).toBe('success')
-    expect(view.title).toBe('Opened rayovin-agent.rayovin.com/docs')
+    expect(view.title).toBe('Opened rayovin.github.io/rayovin-agent')
   })
 })
 

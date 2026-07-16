@@ -45,7 +45,7 @@ def _clean_env(monkeypatch):
     ("https://api.anthropic.com/v1", True, "native Anthropic /v1"),
     ("https://openrouter.ai/api/v1", False, "OpenRouter"),
     ("https://api.openai.com/v1", False, "OpenAI"),
-    ("https://inference-api.rayovin.com/v1", False, "Nous"),
+    ("https://api.github.com/rayovin/rayovin-agent (future)/v1", False, "Nous"),
     ("", False, "empty"),
     (None, False, "None"),
 ])

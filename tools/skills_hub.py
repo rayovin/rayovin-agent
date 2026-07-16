@@ -3770,7 +3770,7 @@ def check_for_skill_updates(
 # Rayovin centralized index source
 # ---------------------------------------------------------------------------
 
-RAYOVIN_INDEX_URL = "https://rayovin-agent.rayovin.com/docs/api/skills-index.json"
+RAYOVIN_INDEX_URL = "https://rayovin.github.io/rayovin-agent/api/skills-index.json"
 RAYOVIN_INDEX_TTL = 6 * 3600  # 6 hours
 
 

@@ -7,7 +7,7 @@ scope for vulnerability reports.
 ## 1. Reporting a Vulnerability
 
 Report privately via [GitHub Security Advisories](https://github.com/NousResearch/rayovin-agent/security/advisories/new)
-or **security@rayovin.com**. Do not open public issues for
+or **security@github.com/rayovin/rayovin-agent**. Do not open public issues for
 security vulnerabilities. **Rayovin Agent does not operate a bug
 bounty program.**
 
@@ -327,6 +327,6 @@ that:
 - **Coordinated disclosure window:** 90 days from report, or until a
   fix is released, whichever comes first.
 - **Channel:** the GHSA thread or email correspondence with
-  security@rayovin.com.
+  security@github.com/rayovin/rayovin-agent.
 - **Credit:** reporters are credited in release notes unless
   anonymity is requested.

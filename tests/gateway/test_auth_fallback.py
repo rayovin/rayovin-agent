@@ -94,7 +94,7 @@ class TestResolveRuntimeAgentKwargsAuthFallback:
                 raise RuntimeError("openrouter unavailable")
             return {
                 "api_key": "nous-key",
-                "base_url": "https://portal.rayovin.com/v1",
+                "base_url": "https://github.com/rayovin/rayovin-agent/v1",
                 "provider": "nous",
                 "api_mode": "chat_completions",
                 "command": None,

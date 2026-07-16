@@ -6,7 +6,7 @@ description: "完整操作指南：订阅、配置、切换模型、启用 gatew
 
 # 通过 Nous Portal 运行 Rayovin Agent
 
-本指南带你从头到尾完成在 [Nous Portal](https://portal.rayovin.com) 订阅下运行 Rayovin Agent 的全过程——从注册账号到验证每个工具的路由是否正确。如果你只想了解 Portal 的概述及订阅内容，请参阅 [Nous Portal 集成页面](/integrations/nous-portal)。本页是操作步骤脚本。
+本指南带你从头到尾完成在 [Nous Portal](https://github.com/rayovin/rayovin-agent) 订阅下运行 Rayovin Agent 的全过程——从注册账号到验证每个工具的路由是否正确。如果你只想了解 Portal 的概述及订阅内容，请参阅 [Nous Portal 集成页面](/integrations/nous-portal)。本页是操作步骤脚本。
 
 ## 前提条件
 
@@ -18,7 +18,7 @@ description: "完整操作指南：订阅、配置、切换模型、启用 gatew
 
 ## 1. 获取订阅
 
-打开 [portal.rayovin.com/manage-subscription](https://portal.rayovin.com/manage-subscription)，注册并选择一个套餐。
+打开 [github.com/rayovin/rayovin-agent/manage-subscription](https://github.com/rayovin/rayovin-agent/manage-subscription)，注册并选择一个套餐。
 
 已订阅？跳至第 2 步。
 
@@ -30,7 +30,7 @@ rayovin setup --portal
 
 这条命令会完成五件事：
 
-1. 打开浏览器跳转至 portal.rayovin.com 进行 OAuth 登录
+1. 打开浏览器跳转至 github.com/rayovin/rayovin-agent 进行 OAuth 登录
 2. 将 refresh token 存储至 `~/.rayovin/auth.json`
 3. 在 `~/.rayovin/config.yaml` 中设置 `model.provider: nous`
 4. 选择一个默认的 agentic 模型（`anthropic/claude-sonnet-4.6` 或类似模型）
@@ -66,7 +66,7 @@ rayovin portal info
   Nous Portal
   ───────────
   Auth:    ✓ logged in
-  Portal:  https://portal.rayovin.com
+  Portal:  https://github.com/rayovin/rayovin-agent
   Model:   ✓ using Nous as inference provider
 
   Tool Gateway
@@ -120,9 +120,9 @@ rayovin config set model.default anthropic/claude-sonnet-4.6
 
 ### 不要在 agent 任务中使用 Rayovin-4
 
-Rayovin-4-70B 和 Rayovin-4-405B 在 Portal 上以大幅折扣提供，但它们是**对话/推理模型**，并非针对工具调用优化的模型。它们在多步骤 agent 循环中表现不佳。请通过 [Nous Chat](https://chat.rayovin.com) 将它们用于对话/研究工作，或通过[订阅代理](/user-guide/features/subscription-proxy)从非 agent 工具中使用。对于 Rayovin Agent 本身，请坚持使用上述前沿 agentic 模型。
+Rayovin-4-70B 和 Rayovin-4-405B 在 Portal 上以大幅折扣提供，但它们是**对话/推理模型**，并非针对工具调用优化的模型。它们在多步骤 agent 循环中表现不佳。请通过 [Nous Chat](https://chat.github.com/rayovin/rayovin-agent) 将它们用于对话/研究工作，或通过[订阅代理](/user-guide/features/subscription-proxy)从非 agent 工具中使用。对于 Rayovin Agent 本身，请坚持使用上述前沿 agentic 模型。
 
-Portal 的[信息页面](https://portal.rayovin.com/info)也有此说明——这是 Nous 官方指导，并非仅代表 Rayovin 一方的意见。
+Portal 的[信息页面](https://github.com/rayovin/rayovin-agent/info)也有此说明——这是 Nous 官方指导，并非仅代表 Rayovin 一方的意见。
 
 ## 6. （可选）自定义 Tool Gateway 路由
 

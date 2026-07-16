@@ -1144,7 +1144,7 @@ class TestChatCompletionsGeminiNativeExtraBodyStrip:
             [{"role": "user", "content": "hi"}],
             None,
             provider_profile=self._nous_profile(),
-            base_url="https://inference.rayovin.com/v1",
+            base_url="https://inference.github.com/rayovin/rayovin-agent/v1",
             session_id="s1",
             max_tokens=None,
         )

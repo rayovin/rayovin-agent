@@ -277,7 +277,7 @@ class TestClassifyApiError:
                 "status": 402,
                 "message": (
                     "Your API key has run out of funds. Please go visit the "
-                    "portal to sort that out: https://portal.rayovin.com"
+                    "portal to sort that out: https://github.com/rayovin/rayovin-agent"
                 ),
             },
         )
@@ -305,7 +305,7 @@ class TestClassifyApiError:
                 "status": 404,
                 "message": (
                     "Model 'gpt-5' is not available on the Free Tier. "
-                    "Upgrade at https://portal.rayovin.com or pick a free model."
+                    "Upgrade at https://github.com/rayovin/rayovin-agent or pick a free model."
                 ),
             },
         )

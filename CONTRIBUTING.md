@@ -93,7 +93,7 @@ The reason is maintenance load, not quality. Every external product absorbed int
 
 Publish these as a **standalone plugin repo** instead:
 
-- Implement the relevant ABC and use the existing plugin discovery path (`~/.rayovin/plugins/`, project `.rayovin/plugins/`, or a pip entry point) — see [Build a Rayovin Plugin](https://rayovin-agent.rayovin.com/docs/guides/build-a-rayovin-plugin)
+- Implement the relevant ABC and use the existing plugin discovery path (`~/.rayovin/plugins/`, project `.rayovin/plugins/`, or a pip entry point) — see [Build a Rayovin Plugin](https://rayovin.github.io/rayovin-agent/guides/build-a-rayovin-plugin)
 - Register lifecycle hooks (`pre_tool_call`, `post_tool_call`, `pre_llm_call`, `post_llm_call`, `on_session_start`, `on_session_end`), tools (`ctx.register_tool`), and CLI subcommands (`ctx.register_cli_command`) through the surface we already expose — no core changes needed
 - If your plugin needs a capability the framework doesn't expose, that's a feature request to **widen the generic plugin surface** (a new hook or `ctx` method) — never special-case your plugin in core
 - Promote it in the [نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob) Discord](https://discord.gg/NousResearch) `#plugins-skills-and-skins` channel so users can find and install it
@@ -124,7 +124,7 @@ development environment on the same layout the CLI, updater, lazy dependency
 installer, gateway, and docs assume.
 
 ```bash
-curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 cd "${RAYOVIN_HOME:-$HOME/.rayovin}/rayovin-agent"
 
 # Add dev/test extras on top of the standard install.
@@ -274,7 +274,7 @@ rayovin-agent/
 ├── skills/                   # Bundled skills (copied to ~/.rayovin/skills/ on install)
 ├── optional-skills/          # Official optional skills (discoverable via hub, not activated by default)
 ├── tests/                    # Test suite
-├── website/                  # Documentation site (rayovin-agent.rayovin.com)
+├── website/                  # Documentation site (rayovin.github.io/rayovin-agent)
 │
 ├── cli-config.yaml.example   # Example configuration (copied to ~/.rayovin/config.yaml)
 └── AGENTS.md                 # Development guide for AI coding assistants

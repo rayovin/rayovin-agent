@@ -7,7 +7,7 @@ const config: Config = {
   tagline: 'The intelligent Persian AI agent by نبض آینده جنوب',
   favicon: 'img/favicon.ico',
 
-  url: 'https://rayovin-agent.rayovin.com',
+  url: 'https://rayovin.github.io/rayovin-agent',
   baseUrl: '/docs/',
 
   organizationName: 'NousResearch',
@@ -145,7 +145,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://rayovin-agent.rayovin.com/',
+          href: 'https://rayovin.github.io/rayovin-agent/',
           label: 'Download',
           position: 'left',
         },
@@ -154,7 +154,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://rayovin-agent.rayovin.com',
+          href: 'https://rayovin.github.io/rayovin-agent',
           label: 'Home',
           position: 'right',
         },
@@ -193,13 +193,13 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            { label: 'Desktop Download', href: 'https://rayovin-agent.rayovin.com/' },
+            { label: 'Desktop Download', href: 'https://rayovin.github.io/rayovin-agent/' },
             { label: 'GitHub', href: 'https://github.com/NousResearch/rayovin-agent' },
-            { label: 'نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)', href: 'https://rayovin.com' },
+            { label: 'نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)', href: 'https://github.com/rayovin/rayovin-agent' },
           ],
         },
       ],
-      copyright: `Built by <a href="https://rayovin.com">نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)</a> · MIT License · ${new Date().getFullYear()}`,
+      copyright: `Built by <a href="https://github.com/rayovin/rayovin-agent">نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)</a> · MIT License · ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

@@ -41,7 +41,7 @@
 ### لینوکس، مک، WSL2
 
 ```bash
-curl -fsSL https://rayovin-agent.rayovin.com/install.sh | bash
+curl -fsSL https://rayovin.github.io/rayovin-agent/install.sh | bash
 ```
 
 ### نصب با pip
