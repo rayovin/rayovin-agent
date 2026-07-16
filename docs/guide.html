@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="راهنمای کامل استفاده از Rayovin Agent">
+  <meta property="og:title" content="راهنما">
+  <meta property="og:description" content="راهنمای کامل استفاده از Rayovin Agent">
+  <meta property="og:image" content="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/banner.png">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/favicon.ico">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/docs/css/style.css">
+  <title>راهنما</title>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/favicon-32.png" alt="">
+    Rayovin Agent
+  </div>
+  <div class="links">
+    <a href="index.html">خانه</a>
+    <a href="features.html">ویژگی‌ها</a>
+    <a href="guide.html">راهنما</a>
+    <a href="install.html">نصب</a>
+    <a href="api.html">API</a>
+    <a href="https://github.com/rayovin/rayovin-agent">GitHub</a>
+  </div>
+</nav>
+
+<div class="container page">
+  <h2>📖 راهنمای استفاده</h2>
+  <h3>شروع کار</h3>
+  <pre><code># نصب
+pip install rayovin-agent
+
+# تنظیم اولیه
+rayovin setup
+
+# شروع چت
+rayovin chat</code></pre>
+  <h3>دستورات اصلی</h3>
+  <table>
+    <tr><th>دستور</th><th>توضیح</th></tr>
+    <tr><td><code>rayovin chat</code></td><td>شروع چت تعاملی</td></tr>
+    <tr><td><code>rayovin setup</code></td><td>تنظیم اولیه (provider، API key)</td></tr>
+    <tr><td><code>rayovin status</code></td><td>وضعیت فعلی agent</td></tr>
+    <tr><td><code>rayovin model</code></td><td>انتخاب مدل و provider</td></tr>
+    <tr><td><code>rayovin skills list</code></td><td>لیست Skillهای نصب شده</td></tr>
+    <tr><td><code>rayovin cron</code></td><td>مدیریت کارهای زمان‌بندی شده</td></tr>
+    <tr><td><code>rayovin config</code></td><td>مشاهده/تغییر تنظیمات</td></tr>
+    <tr><td><code>rayovin update</code></td><td>بروزرسانی agent</td></tr>
+  </table>
+  <h3>🔌 اتصال پیام‌رسان‌ها</h3>
+  <p>بعد از اجرای <code>rayovin setup</code>، می‌تونی پیام‌رسان‌ها رو وصل کنی:</p>
+  <table>
+    <tr><th>پلتفرم</th><th>دستور</th></tr>
+    <tr><td>تلگرام</td><td><code>rayovin setup --platform telegram</code></td></tr>
+    <tr><td>دیسکورد</td><td><code>rayovin setup --platform discord</code></td></tr>
+    <tr><td>واتساپ</td><td><code>rayovin setup --platform whatsapp</code></td></tr>
+    <tr><td>اسلک</td><td><code>rayovin setup --platform slack</code></td></tr>
+  </table>
+  <h3>⏰ کارهای زمان‌بندی شده</h3>
+  <pre><code># هر روز ساعت ۹ صبح گزارش بده
+rayovin cron create --schedule "0 9 * * *" --prompt "گزارش روزانه"
+
+# لیست cron jobs
+rayovin cron list</code></pre>
+</div>
+
+<footer>
+  <p>
+    ساخته شده با ❤️ توسط <a href="https://github.com/rayovin">نبض آینده جنوب</a> &nbsp;|&nbsp;
+    <a href="https://github.com/rayovin/rayovin-agent/blob/main/LICENSE">MIT License</a>
+  </p>
+</footer>
+</body>
+</html>

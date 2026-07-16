@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="راهنمای نصب Rayovin Agent">
+  <meta property="og:title" content="نصب Rayovin Agent">
+  <meta property="og:description" content="راهنمای نصب Rayovin Agent">
+  <meta property="og:image" content="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/banner.png">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/favicon.ico">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/docs/css/style.css">
+  <title>نصب Rayovin Agent</title>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/favicon-32.png" alt="">
+    Rayovin Agent
+  </div>
+  <div class="links">
+    <a href="index.html">خانه</a>
+    <a href="features.html">ویژگی‌ها</a>
+    <a href="guide.html">راهنما</a>
+    <a href="install.html">نصب</a>
+    <a href="api.html">API</a>
+    <a href="https://github.com/rayovin/rayovin-agent">GitHub</a>
+  </div>
+</nav>
+
+<div class="container page">
+  <h2>🚀 نصب Rayovin Agent</h2>
+  <h3>روش ۱: نصب با pip</h3>
+  <pre><code>pip install rayovin-agent</code></pre>
+  <h3>روش ۲: نصب از سورس (جدیدترین نسخه)</h3>
+  <pre><code>git clone https://github.com/rayovin/rayovin-agent.git
+cd rayovin-agent
+pip install -e .</code></pre>
+  <h3>روش ۳: نصب با curl</h3>
+  <pre><code>curl -fsSL https://raw.githubusercontent.com/rayovin/rayovin-agent/main/setup-rayovin.sh | bash</code></pre>
+  <h3>📋 نیازمندی‌ها</h3>
+  <table>
+    <tr><th>نیازمندی</th><th>توضیح</th></tr>
+    <tr><td>Python</td><td>≥ 3.11 و &lt; 3.14</td></tr>
+    <tr><td>سیستم‌عامل</td><td>لینوکس، macOS، WSL2</td></tr>
+  </table>
+  <h3>🔧 تنظیم اولیه</h3>
+  <pre><code>rayovin setup</code></pre>
+  <p>این دستور راهنمای گام‌به‌گام برای تنظیم provider و API key</p>
+  <h3>🧪 تست نصب</h3>
+  <pre><code>bash test-rayovin.sh</code></pre>
+</div>
+
+<footer>
+  <p>
+    ساخته شده با ❤️ توسط <a href="https://github.com/rayovin">نبض آینده جنوب</a> &nbsp;|&nbsp;
+    <a href="https://github.com/rayovin/rayovin-agent/blob/main/LICENSE">MIT License</a>
+  </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="راهنمای تنظیم API و Provider">
+  <meta property="og:title" content="API و Providerها">
+  <meta property="og:description" content="راهنمای تنظیم API و Provider">
+  <meta property="og:image" content="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/banner.png">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/favicon.ico">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/docs/css/style.css">
+  <title>API و Providerها</title>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/rayovin/rayovin-agent/main/assets/favicon-32.png" alt="">
+    Rayovin Agent
+  </div>
+  <div class="links">
+    <a href="index.html">خانه</a>
+    <a href="features.html">ویژگی‌ها</a>
+    <a href="guide.html">راهنما</a>
+    <a href="install.html">نصب</a>
+    <a href="api.html">API</a>
+    <a href="https://github.com/rayovin/rayovin-agent">GitHub</a>
+  </div>
+</nav>
+
+<div class="container page">
+  <h2>🔌 مستندات API</h2>
+  <p>Rayovin Agent از OpenAI-compatible API پشتیبانی می‌کنه.</p>
+  <h3>انواع Providerها</h3>
+  <table>
+    <tr><th>Provider</th><th>نوع</th><th>API Key</th></tr>
+    <tr><td>OpenAI</td><td>رسمی</td><td>✅</td></tr>
+    <tr><td>Anthropic</td><td>رسمی</td><td>✅</td></tr>
+    <tr><td>OpenRouter</td><td>واسط</td><td>✅</td></tr>
+    <tr><td>Google Gemini</td><td>رسمی</td><td>✅</td></tr>
+    <tr><td>Ollama</td><td>محلی</td><td>❌ (رایگان)</td></tr>
+    <tr><td>vLLM</td><td>محلی/سرور</td><td>❌</td></tr>
+    <tr><td>llama.cpp</td><td>محلی</td><td>❌</td></tr>
+  </table>
+  <h3>تنظیم Provider</h3>
+  <pre><code># با دستور setup
+rayovin setup
+
+# یا مستقیم
+rayovin config set provider openai
+rayovin config set openai.api_key sk-...XXXX</code></pre>
+  <h3>تغییر مدل</h3>
+  <pre><code>rayovin model</code></pre>
+  <h3>استفاده از Ollama (محلی)</h3>
+  <pre><code># نصب Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3
+
+# تنظیم در Rayovin
+rayovin config set provider ollama
+rayovin config set ollama.model llama3</code></pre>
+</div>
+
+<footer>
+  <p>
+    ساخته شده با ❤️ توسط <a href="https://github.com/rayovin">نبض آینده جنوب</a> &nbsp;|&nbsp;
+    <a href="https://github.com/rayovin/rayovin-agent/blob/main/LICENSE">MIT License</a>
+  </p>
+</footer>
+</body>
+</html>
