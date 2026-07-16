@@ -268,7 +268,7 @@ registry.registerMany([
       run: toggleLayoutEditMode
     } satisfies PaletteContribution
   },
-  // The agent's write -> see loop: rescan <hermes home>/desktop-plugins
+  // The agent's write -> see loop: rescan <rayovin home>/desktop-plugins
   // without relaunching (same-id reloads dispose the previous incarnation).
   {
     id: 'plugins.reload',
@@ -545,7 +545,7 @@ const $previewVisible = computed([$previewTarget, $filePreviewTarget], (target, 
 bindPaneVisibility('preview', $previewVisible, closeRightRail)
 
 // Logs are optional chrome: off by default, toggled from ⌘K, persisted.
-const $logsOpen = persistentAtom('hermes.desktop.logsOpen', false, Codecs.bool)
+const $logsOpen = persistentAtom('rayovin.desktop.logsOpen', false, Codecs.bool)
 
 bindPaneCollapse(
   'logs',

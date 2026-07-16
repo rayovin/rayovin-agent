@@ -21,7 +21,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { SanitizedInput } from '@/components/ui/sanitized-input'
-import type { HermesGitBranch } from '@/global'
+import type { RayovinGitBranch } from '@/global'
 import { useI18n } from '@/i18n'
 import { gitRef } from '@/lib/sanitize'
 import { cn } from '@/lib/utils'
@@ -56,7 +56,7 @@ interface BranchActionCopy {
   branchSwitchHome: string
 }
 
-const branchActionLabel = (branch: HermesGitBranch, copy: BranchActionCopy) => {
+const branchActionLabel = (branch: RayovinGitBranch, copy: BranchActionCopy) => {
   if (branch.checkedOut) {
     return copy.branchOpenExisting
   }
@@ -143,7 +143,7 @@ export function WorkspaceMenu({ path, onRemove }: { path: null | string; onRemov
 
 // "New worktree": prompt for a branch name, then git spins up a fresh worktree
 // for that branch under the repo (the lightest way) and we open a new session
-// inside it. Naming is explicit — no auto-generated `hermes/work-<ts>` trees.
+// inside it. Naming is explicit — no auto-generated `rayovin/work-<ts>` trees.
 // The base branch defaults to the remote default (origin/HEAD); the user can
 // pick any local or remote-tracking branch via a filterable combobox.
 export function StartWorkButton({ repoPath, onStarted }: { repoPath: string; onStarted: (path: string) => void }) {
@@ -154,7 +154,7 @@ export function StartWorkButton({ repoPath, onStarted }: { repoPath: string; onS
   const [name, setName] = useState('')
   const [pending, setPending] = useState(false)
   const [convertMode, setConvertMode] = useState(false)
-  const [branches, setBranches] = useState<HermesGitBranch[]>([])
+  const [branches, setBranches] = useState<RayovinGitBranch[]>([])
   const [branchesLoading, setBranchesLoading] = useState(false)
   const [selectedBase, setSelectedBase] = useState('')
 
@@ -200,7 +200,7 @@ export function StartWorkButton({ repoPath, onStarted }: { repoPath: string; onS
     }
   }
 
-  const convert = async (branch: HermesGitBranch) => {
+  const convert = async (branch: RayovinGitBranch) => {
     if (pending || !repoPath || !branch) {
       return
     }

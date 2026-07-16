@@ -1,8 +1,8 @@
 """Regression tests for gateway per-turn env reload preserving config authority.
 
 Issue #19158: startup bridges config.yaml agent.max_turns into
-HERMES_MAX_ITERATIONS, but a later per-turn load_dotenv(..., override=True)
-can restore a stale .env HERMES_MAX_ITERATIONS value before the next turn.
+RAYOVIN_MAX_ITERATIONS, but a later per-turn load_dotenv(..., override=True)
+can restore a stale .env RAYOVIN_MAX_ITERATIONS value before the next turn.
 """
 
 from __future__ import annotations
@@ -16,48 +16,48 @@ from gateway import run as gateway_run
 
 
 def test_reload_runtime_env_preserves_config_max_turns(tmp_path: Path, monkeypatch) -> None:
-    hermes_home = tmp_path / ".hermes"
-    hermes_home.mkdir()
-    (hermes_home / "config.yaml").write_text(
+    rayovin_home = tmp_path / ".rayovin"
+    rayovin_home.mkdir()
+    (rayovin_home / "config.yaml").write_text(
         yaml.safe_dump({"agent": {"max_turns": 9000}}),
         encoding="utf-8",
     )
-    (hermes_home / ".env").write_text(
-        "HERMES_MAX_ITERATIONS=90\nOPENROUTER_API_KEY=fresh-key\n",
+    (rayovin_home / ".env").write_text(
+        "RAYOVIN_MAX_ITERATIONS=90\nOPENROUTER_API_KEY=fresh-key\n",
         encoding="utf-8",
     )
 
-    monkeypatch.setattr(gateway_run, "_hermes_home", hermes_home)
-    monkeypatch.setenv("HERMES_MAX_ITERATIONS", "9000")
+    monkeypatch.setattr(gateway_run, "_rayovin_home", rayovin_home)
+    monkeypatch.setenv("RAYOVIN_MAX_ITERATIONS", "9000")
     monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
 
     gateway_run._reload_runtime_env_preserving_config_authority()
 
     assert os.environ["OPENROUTER_API_KEY"] == "fresh-key"
-    assert os.environ["HERMES_MAX_ITERATIONS"] == "9000"
+    assert os.environ["RAYOVIN_MAX_ITERATIONS"] == "9000"
 
 
 def test_reload_runtime_env_keeps_env_max_iterations_when_config_omits_key(
     tmp_path: Path, monkeypatch
 ) -> None:
-    hermes_home = tmp_path / ".hermes"
-    hermes_home.mkdir()
-    (hermes_home / "config.yaml").write_text(yaml.safe_dump({"agent": {}}), encoding="utf-8")
-    (hermes_home / ".env").write_text("HERMES_MAX_ITERATIONS=123\n", encoding="utf-8")
+    rayovin_home = tmp_path / ".rayovin"
+    rayovin_home.mkdir()
+    (rayovin_home / "config.yaml").write_text(yaml.safe_dump({"agent": {}}), encoding="utf-8")
+    (rayovin_home / ".env").write_text("RAYOVIN_MAX_ITERATIONS=123\n", encoding="utf-8")
 
-    monkeypatch.setattr(gateway_run, "_hermes_home", hermes_home)
-    monkeypatch.delenv("HERMES_MAX_ITERATIONS", raising=False)
+    monkeypatch.setattr(gateway_run, "_rayovin_home", rayovin_home)
+    monkeypatch.delenv("RAYOVIN_MAX_ITERATIONS", raising=False)
 
     gateway_run._reload_runtime_env_preserving_config_authority()
 
-    assert os.environ["HERMES_MAX_ITERATIONS"] == "123"
+    assert os.environ["RAYOVIN_MAX_ITERATIONS"] == "123"
 
 
 def test_current_max_iterations_reloads_before_reading(monkeypatch) -> None:
-    monkeypatch.setenv("HERMES_MAX_ITERATIONS", "90")
+    monkeypatch.setenv("RAYOVIN_MAX_ITERATIONS", "90")
 
     def _fake_reload() -> None:
-        os.environ["HERMES_MAX_ITERATIONS"] = "200"
+        os.environ["RAYOVIN_MAX_ITERATIONS"] = "200"
 
     monkeypatch.setattr(
         gateway_run,

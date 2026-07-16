@@ -3,15 +3,15 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Hermes Agent',
-  tagline: 'The self-improving AI agent',
+  title: 'Rayovin Agent',
+  tagline: 'The intelligent Persian AI agent by نبض آینده جنوب',
   favicon: 'img/favicon.ico',
 
-  url: 'https://hermes-agent.nousresearch.com',
+  url: 'https://rayovin-agent.rayovin.com',
   baseUrl: '/docs/',
 
   organizationName: 'NousResearch',
-  projectName: 'hermes-agent',
+  projectName: 'rayovin-agent',
 
   onBrokenLinks: 'warn',
 
@@ -89,7 +89,7 @@ const config: Config = {
           {
             // Moved when the Plugins subcategory was created under
             // Developer Guide > Extending (docs restructure, July 2026)
-            from: '/guides/build-a-hermes-plugin',
+            from: '/guides/build-a-rayovin-plugin',
             to: '/developer-guide/plugins',
           },
         ],
@@ -104,7 +104,7 @@ const config: Config = {
         docs: {
           routeBasePath: '/',  // Docs at the root of /docs/
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/NousResearch/hermes-agent/edit/main/website/',
+          editUrl: 'https://github.com/NousResearch/rayovin-agent/edit/main/website/',
         },
         blog: false,
         theme: {
@@ -115,7 +115,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/hermes-agent-banner.png',
+    image: 'img/rayovin-agent-banner.png',
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: true,
@@ -127,9 +127,9 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'Hermes Agent',
+      title: 'Rayovin Agent',
       logo: {
-        alt: 'Hermes Agent',
+        alt: 'Rayovin Agent',
         src: 'img/logo.png',
       },
       items: [
@@ -145,7 +145,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://hermes-agent.nousresearch.com/',
+          href: 'https://rayovin-agent.rayovin.com/',
           label: 'Download',
           position: 'left',
         },
@@ -154,12 +154,12 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://hermes-agent.nousresearch.com',
+          href: 'https://rayovin-agent.rayovin.com',
           label: 'Home',
           position: 'right',
         },
         {
-          href: 'https://github.com/NousResearch/hermes-agent',
+          href: 'https://github.com/NousResearch/rayovin-agent',
           label: 'GitHub',
           position: 'right',
         },
@@ -186,20 +186,20 @@ const config: Config = {
           title: 'Community',
           items: [
             { label: 'Discord', href: 'https://discord.gg/NousResearch' },
-            { label: 'GitHub Issues', href: 'https://github.com/NousResearch/hermes-agent/issues' },
+            { label: 'GitHub Issues', href: 'https://github.com/NousResearch/rayovin-agent/issues' },
             { label: 'Skills Hub', href: 'https://agentskills.io' },
           ],
         },
         {
           title: 'More',
           items: [
-            { label: 'Desktop Download', href: 'https://hermes-agent.nousresearch.com/' },
-            { label: 'GitHub', href: 'https://github.com/NousResearch/hermes-agent' },
-            { label: 'Nous Research', href: 'https://nousresearch.com' },
+            { label: 'Desktop Download', href: 'https://rayovin-agent.rayovin.com/' },
+            { label: 'GitHub', href: 'https://github.com/NousResearch/rayovin-agent' },
+            { label: 'نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)', href: 'https://rayovin.com' },
           ],
         },
       ],
-      copyright: `Built by <a href="https://nousresearch.com">Nous Research</a> · MIT License · ${new Date().getFullYear()}`,
+      copyright: `Built by <a href="https://rayovin.com">نبض آینده جنوب (Nabz-e-Ayandeh-e-Jonoob)</a> · MIT License · ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

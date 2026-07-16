@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react'
 
-import { getCronJobs, listAllProfileSessions, type SessionInfo } from '@/hermes'
+import { getCronJobs, listAllProfileSessions, type SessionInfo } from '@/rayovin'
 import { sameCronSignature } from '@/lib/session-signatures'
 import {
   isMessagingSource,

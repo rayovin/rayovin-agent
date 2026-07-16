@@ -1,11 +1,11 @@
-import { getGlobalModelOptions, type HermesGateway, type ModelOptionsResponse } from '@/hermes'
+import { getGlobalModelOptions, type RayovinGateway, type ModelOptionsResponse } from '@/rayovin'
 
 interface ModelOptionsRequest {
   /** When false, include ambient/unconfigured providers (onboarding/setup
    *  surfaces). Chat pickers default to true so only explicitly configured
    *  providers are listed (#56974). */
   explicitOnly?: boolean
-  gateway?: HermesGateway
+  gateway?: RayovinGateway
   refresh?: boolean
   sessionId?: null | string
 }

@@ -12,61 +12,61 @@ import path from 'node:path'
 
 import { test } from 'vitest'
 
-import { canImportHermesCli, hermesRuntimeImportProbe, verifyHermesCli } from './backend-probes'
+import { canImportRayovinCli, rayovinRuntimeImportProbe, verifyRayovinCli } from './backend-probes'
 
 // Resolve the host's own Node binary -- guaranteed to be on disk and
 // runnable. We use it as both a stand-in for "a python that doesn't
-// have hermes_cli" (since `node -c "import hermes_cli"` will exit
-// non-zero) and as a way to script verifyHermesCli's success path
+// have rayovin_cli" (since `node -c "import rayovin_cli"` will exit
+// non-zero) and as a way to script verifyRayovinCli's success path
 // (a tiny script we write to disk that exits 0 on --version).
 const NODE_BIN = process.execPath
 
-test('canImportHermesCli returns false when path is falsy', () => {
-  assert.equal(canImportHermesCli(''), false)
-  assert.equal(canImportHermesCli(null), false)
-  assert.equal(canImportHermesCli(undefined), false)
+test('canImportRayovinCli returns false when path is falsy', () => {
+  assert.equal(canImportRayovinCli(''), false)
+  assert.equal(canImportRayovinCli(null), false)
+  assert.equal(canImportRayovinCli(undefined), false)
 })
 
-test('canImportHermesCli returns false when interpreter cannot run -c', () => {
-  // node IS an interpreter, but `node -c "import hermes_cli"` is a
+test('canImportRayovinCli returns false when interpreter cannot run -c', () => {
+  // node IS an interpreter, but `node -c "import rayovin_cli"` is a
   // SyntaxError -- different exit reason from a real Python's
   // ModuleNotFoundError, but the predicate is "exit 0 or not" and
   // both land on "not", which is exactly what we want for the
   // resolver fall-through.
-  assert.equal(canImportHermesCli(NODE_BIN), false)
+  assert.equal(canImportRayovinCli(NODE_BIN), false)
 })
 
-test('canImportHermesCli returns false when binary does not exist', () => {
-  const ghost = path.join(os.tmpdir(), 'hermes-probes-ghost-' + Date.now() + '.exe')
-  assert.equal(canImportHermesCli(ghost), false)
+test('canImportRayovinCli returns false when binary does not exist', () => {
+  const ghost = path.join(os.tmpdir(), 'rayovin-probes-ghost-' + Date.now() + '.exe')
+  assert.equal(canImportRayovinCli(ghost), false)
 })
 
-test('hermes runtime import probe checks config dependencies', () => {
-  const probe = hermesRuntimeImportProbe()
+test('rayovin runtime import probe checks config dependencies', () => {
+  const probe = rayovinRuntimeImportProbe()
   assert.match(probe, /\bimport yaml\b/)
   // dotenv is the first third-party import on the CLI boot path
-  // (hermes_cli/env_loader.py); a mid-update venv missing python-dotenv
+  // (rayovin_cli/env_loader.py); a mid-update venv missing python-dotenv
   // passed the old probe and produced an unrecoverable boot loop.
   assert.match(probe, /\bimport dotenv\b/)
-  assert.match(probe, /\bimport hermes_cli\.config\b/)
+  assert.match(probe, /\bimport rayovin_cli\.config\b/)
 })
 
-test('verifyHermesCli returns false when command is falsy', () => {
-  assert.equal(verifyHermesCli(''), false)
-  assert.equal(verifyHermesCli(null), false)
-  assert.equal(verifyHermesCli(undefined), false)
+test('verifyRayovinCli returns false when command is falsy', () => {
+  assert.equal(verifyRayovinCli(''), false)
+  assert.equal(verifyRayovinCli(null), false)
+  assert.equal(verifyRayovinCli(undefined), false)
 })
 
-test('verifyHermesCli returns false when binary does not exist', () => {
-  const ghost = path.join(os.tmpdir(), 'hermes-probes-ghost-' + Date.now() + '.exe')
-  assert.equal(verifyHermesCli(ghost), false)
+test('verifyRayovinCli returns false when binary does not exist', () => {
+  const ghost = path.join(os.tmpdir(), 'rayovin-probes-ghost-' + Date.now() + '.exe')
+  assert.equal(verifyRayovinCli(ghost), false)
 })
 
-test('verifyHermesCli returns true when --version exits 0', () => {
+test('verifyRayovinCli returns true when --version exits 0', () => {
   // Write a tiny script that exits 0 regardless of args, then invoke
-  // it through node. This stands in for a working hermes binary --
-  // verifyHermesCli only cares about the exit code.
-  const scriptPath = path.join(os.tmpdir(), `hermes-probes-ok-${Date.now()}-${process.pid}.cjs`)
+  // it through node. This stands in for a working rayovin binary --
+  // verifyRayovinCli only cares about the exit code.
+  const scriptPath = path.join(os.tmpdir(), `rayovin-probes-ok-${Date.now()}-${process.pid}.cjs`)
   fs.writeFileSync(scriptPath, 'process.exit(0)\n')
 
   try {
@@ -75,7 +75,7 @@ test('verifyHermesCli returns true when --version exits 0', () => {
     // execFileSync passes ['--version'] as args, which node ignores
     // gracefully (well, it prints its version and exits 0, which is
     // perfect -- exit code 0 is the only signal we read).
-    assert.equal(verifyHermesCli(NODE_BIN), true)
+    assert.equal(verifyRayovinCli(NODE_BIN), true)
   } finally {
     try {
       fs.unlinkSync(scriptPath)
@@ -85,10 +85,10 @@ test('verifyHermesCli returns true when --version exits 0', () => {
   }
 })
 
-test('verifyHermesCli swallows timeouts (does not throw)', () => {
+test('verifyRayovinCli swallows timeouts (does not throw)', () => {
   // We can't easily provoke a real 5s hang in CI without slowing the
   // suite, but we CAN confirm that an invocation that DOES throw
   // (because the binary is missing) returns false rather than
   // propagating. Same code path the timeout case takes.
-  assert.equal(verifyHermesCli('/definitely/not/a/real/binary/anywhere'), false)
+  assert.equal(verifyRayovinCli('/definitely/not/a/real/binary/anywhere'), false)
 })

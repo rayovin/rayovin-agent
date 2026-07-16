@@ -22,7 +22,7 @@ import { DesktopOnboardingOverlay } from '@/components/onboarding'
 import { FloatingPet } from '@/components/pet/floating-pet'
 import { RemoteDisplayBanner } from '@/components/remote-display-banner'
 import { emitGatewayEvent } from '@/contrib/events'
-import { getSessionMessages, triggerCronJob } from '@/hermes'
+import { getSessionMessages, triggerCronJob } from '@/rayovin'
 import { type ChatMessage, chatMessageText, preserveLocalAssistantErrors, toChatMessages } from '@/lib/chat-messages'
 import { sessionMessagesSignature } from '@/lib/session-signatures'
 import { isMessagingSource } from '@/lib/session-source'
@@ -76,7 +76,7 @@ import { SessionPickerOverlay } from '../session-picker-overlay'
 import { SessionSwitcher } from '../session-switcher'
 import { useContextSuggestions } from '../session/hooks/use-context-suggestions'
 import { useCwdActions } from '../session/hooks/use-cwd-actions'
-import { useHermesConfig } from '../session/hooks/use-hermes-config'
+import { useRayovinConfig } from '../session/hooks/use-rayovin-config'
 import { useMessageStream } from '../session/hooks/use-message-stream'
 import { useModelControls } from '../session/hooks/use-model-controls'
 import { usePreviewRouting } from '../session/hooks/use-preview-routing'
@@ -221,7 +221,7 @@ export function ContribWiring({ children }: { children: ReactNode }) {
     requestGateway
   })
 
-  const { refreshHermesConfig, sttEnabled, voiceMaxRecordingSeconds } = useHermesConfig({
+  const { refreshRayovinConfig, sttEnabled, voiceMaxRecordingSeconds } = useRayovinConfig({
     activeSessionIdRef,
     refreshProjectBranch
   })
@@ -322,7 +322,7 @@ export function ContribWiring({ children }: { children: ReactNode }) {
     activeSessionIdRef,
     hydrateFromStoredSession,
     queryClient,
-    refreshHermesConfig,
+    refreshRayovinConfig,
     refreshSessions,
     sessionStateByRuntimeIdRef,
     updateSessionState
@@ -605,7 +605,7 @@ export function ContribWiring({ children }: { children: ReactNode }) {
     onGatewayReady: g => {
       gatewayRef.current = g
     },
-    refreshHermesConfig,
+    refreshRayovinConfig,
     refreshSessions
   })
 
@@ -625,7 +625,7 @@ export function ContribWiring({ children }: { children: ReactNode }) {
     refreshActiveMessagingTranscript,
     refreshCronJobs,
     refreshCurrentModel,
-    refreshHermesConfig,
+    refreshRayovinConfig,
     refreshMessagingSessions,
     refreshSessions,
     requestGateway
@@ -851,7 +851,7 @@ export function ContribWiring({ children }: { children: ReactNode }) {
         <DesktopOnboardingOverlay
           enabled={gatewayState === 'open'}
           onCompleted={() => {
-            void refreshHermesConfig()
+            void refreshRayovinConfig()
             void refreshCurrentModel()
             void queryClient.invalidateQueries({ queryKey: ['model-options'] })
           }}
@@ -876,7 +876,7 @@ export function ContribWiring({ children }: { children: ReactNode }) {
             gateway={gatewayRef.current}
             onClose={closeOverlayToPreviousRoute}
             onConfigSaved={() => {
-              void refreshHermesConfig()
+              void refreshRayovinConfig()
               void refreshCurrentModel()
               void queryClient.invalidateQueries({ queryKey: ['model-options'] })
             }}

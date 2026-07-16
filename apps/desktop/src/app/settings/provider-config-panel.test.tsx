@@ -1,12 +1,12 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { MemoryProviderConfig } from '@/types/hermes'
+import type { MemoryProviderConfig } from '@/types/rayovin'
 
 const getMemoryProviderConfig = vi.fn()
 const saveMemoryProviderConfig = vi.fn()
 
-vi.mock('@/hermes', () => ({
+vi.mock('@/rayovin', () => ({
   getMemoryProviderConfig: (provider: string) => getMemoryProviderConfig(provider),
   saveMemoryProviderConfig: (provider: string, values: unknown) => saveMemoryProviderConfig(provider, values)
 }))
@@ -23,7 +23,7 @@ function hindsightSchema(overrides: Partial<MemoryProviderConfig['fields'][numbe
       label: 'Mode',
       kind: 'select',
       value: 'cloud',
-      description: 'How Hermes connects to Hindsight.',
+      description: 'How Rayovin connects to Hindsight.',
       placeholder: '',
       is_set: true,
       options: [
@@ -55,7 +55,7 @@ function hindsightSchema(overrides: Partial<MemoryProviderConfig['fields'][numbe
       key: 'bank_id',
       label: 'Bank ID',
       kind: 'text',
-      value: 'hermes',
+      value: 'rayovin',
       description: '',
       placeholder: '',
       is_set: true,
@@ -110,7 +110,7 @@ describe('ProviderConfigPanel', () => {
     await renderPanel()
 
     expect(await screen.findByDisplayValue('https://api.hindsight.vectorize.io')).toBeTruthy()
-    expect(screen.getByDisplayValue('hermes')).toBeTruthy()
+    expect(screen.getByDisplayValue('rayovin')).toBeTruthy()
     expect(screen.getByText('Cloud')).toBeTruthy()
     expect(screen.getAllByText('Hindsight Cloud API (lightweight, just needs an API key)').length).toBeGreaterThan(0)
     expect(screen.getByText('mid')).toBeTruthy()

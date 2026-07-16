@@ -213,7 +213,7 @@ def test_nous_portal_pricing_preserves_vendor_prefixed_model_ids(monkeypatch):
 
     entry = get_pricing_entry("openai/gpt-5.5-pro", provider="nous")
 
-    assert seen["base_url"] == "https://inference-api.nousresearch.com/v1"
+    assert seen["base_url"] == "https://inference-api.rayovin.com/v1"
     assert float(entry.input_cost_per_million) == 25.0
     assert float(entry.output_cost_per_million) == 125.0
 
@@ -222,7 +222,7 @@ def test_deepseek_v4_pro_pricing_entry_exists():
     """Regression test: deepseek-v4-pro must have a pricing entry.
 
     Before this fix, deepseek-v4-pro sessions showed as unknown cost
-    in hermes insights because the _OFFICIAL_DOCS_PRICING table had no
+    in rayovin insights because the _OFFICIAL_DOCS_PRICING table had no
     entry for that model.  See #24218.
     """
     entry = get_pricing_entry(
@@ -405,7 +405,7 @@ def test_fireworks_plugin_fallback_models_all_have_pricing():
 
 def test_fireworks_rows_all_carry_cache_read_pricing():
     """Invariant: Fireworks publishes cached-input rates for every serverless
-    model, and Hermes prompt caching is active on Fireworks sessions — every
+    model, and Rayovin prompt caching is active on Fireworks sessions — every
     snapshot row must carry a cache_read rate cheaper than fresh input."""
     from agent.usage_pricing import _OFFICIAL_DOCS_PRICING
 

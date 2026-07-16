@@ -117,7 +117,7 @@ class TestFindBashUnchanged:
 
 
 class TestFindBashSkipsBrokenCustomPath:
-    """Stale HERMES_GIT_BASH_PATH must not brick Windows terminal startup."""
+    """Stale RAYOVIN_GIT_BASH_PATH must not brick Windows terminal startup."""
 
     def test_falls_through_to_portable_when_custom_fails_probe(self, tmp_path, monkeypatch):
         import tools.environments.local as local_mod
@@ -128,11 +128,11 @@ class TestFindBashSkipsBrokenCustomPath:
         broken = tmp_path / "broken" / "bash.exe"
         broken.parent.mkdir()
         broken.write_text("", encoding="utf-8")
-        portable = tmp_path / "hermes" / "git" / "bin" / "bash.exe"
+        portable = tmp_path / "rayovin" / "git" / "bin" / "bash.exe"
         portable.parent.mkdir(parents=True)
         portable.write_text("", encoding="utf-8")
 
-        monkeypatch.setenv("HERMES_GIT_BASH_PATH", str(broken))
+        monkeypatch.setenv("RAYOVIN_GIT_BASH_PATH", str(broken))
         monkeypatch.setenv("LOCALAPPDATA", str(tmp_path))
 
         def fake_starts(path: str) -> bool:
