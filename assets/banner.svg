@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 400" width="1500" height="400">
+  <defs>
+    <!-- Purple gradient background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0518"/>
+      <stop offset="50%" stop-color="#120830"/>
+      <stop offset="100%" stop-color="#0a0518"/>
+    </linearGradient>
+    
+    <!-- Gold gradient for text -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#ffb300"/>
+      <stop offset="100%" stop-color="#cc8800"/>
+    </linearGradient>
+    
+    <!-- Purple glow -->
+    <radialGradient id="glowGrad" cx="85%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#a278f0" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#7a3ed8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0a0518" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Glow for bird -->
+    <radialGradient id="birdGlow" cx="80%" cy="50%" r="20%">
+      <stop offset="0%" stop-color="#c8aaff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#a278f0" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0a0518" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold shadow filter -->
+    <filter id="goldShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="1" flood-color="#664400" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Purple shadow for subtitle -->
+    <filter id="purpleShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+    
+    <!-- Glow filter -->
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1500" height="400" fill="url(#bgGrad)"/>
+  <rect width="1500" height="400" fill="url(#glowGrad)"/>
+  
+  <!-- Grid lines (subtle) -->
+  <g stroke="#1a1040" stroke-width="0.5" opacity="0.5">
+    <line x1="0" y1="40" x2="1500" y2="40"/>
+    <line x1="0" y1="80" x2="1500" y2="80"/>
+    <line x1="0" y1="120" x2="1500" y2="120"/>
+    <line x1="0" y1="160" x2="1500" y2="160"/>
+    <line x1="0" y1="200" x2="1500" y2="200"/>
+    <line x1="0" y1="240" x2="1500" y2="240"/>
+    <line x1="0" y1="280" x2="1500" y2="280"/>
+    <line x1="0" y1="320" x2="1500" y2="320"/>
+    <line x1="0" y1="360" x2="1500" y2="360"/>
+  </g>
+  <g stroke="#1a1040" stroke-width="0.5" opacity="0.3">
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="500" y1="0" x2="500" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="700" y1="0" x2="700" y2="400"/>
+    <line x1="800" y1="0" x2="800" y2="400"/>
+    <line x1="900" y1="0" x2="900" y2="400"/>
+    <line x1="1000" y1="0" x2="1000" y2="400"/>
+    <line x1="1100" y1="0" x2="1100" y2="400"/>
+    <line x1="1200" y1="0" x2="1200" y2="400"/>
+    <line x1="1300" y1="0" x2="1300" y2="400"/>
+    <line x1="1400" y1="0" x2="1400" y2="400"/>
+  </g>
+
+  <!-- Bird Logo Area -->
+  <g transform="translate(1100, 80)">
+    <!-- Glow behind bird -->
+    <circle cx="150" cy="120" r="180" fill="url(#birdGlow)"/>
+    
+    <!-- Main bird/phoenix logo inspired by your purple logo -->
+    <!-- Wing - sweeping upward -->
+    <path d="M 120 140 
+             Q 80 60, 180 20 
+             Q 220 10, 240 30 
+             Q 200 50, 170 80
+             Q 150 100, 140 130" 
+          fill="#a278f0" opacity="0.9"/>
+    
+    <!-- Wing secondary feather -->
+    <path d="M 130 150 
+             Q 100 90, 190 50 
+             Q 210 45, 220 55 
+             Q 190 70, 165 95
+             Q 150 115, 145 140" 
+          fill="#8a5ce0" opacity="0.9"/>
+    
+    <!-- Wing tertiary feather -->
+    <path d="M 140 160 
+             Q 120 120, 195 85 
+             Q 205 80, 210 90 
+             Q 180 100, 158 120
+             Q 150 135, 148 155" 
+          fill="#7a3ed8" opacity="0.9"/>
+
+    <!-- Lower body / breast -->
+    <path d="M 120 140 
+             Q 100 170, 80 200 
+             Q 60 230, 70 250 
+             Q 90 240, 110 220
+             Q 130 195, 135 170" 
+          fill="#9a6ae8"/>
+
+    <!-- Tail feathers -->
+    <path d="M 80 200 
+             Q 40 220, 10 240 
+             Q 20 230, 30 220 
+             Q 50 205, 75 195" 
+          fill="#7a3ed8"/>
+    <path d="M 70 220 
+             Q 30 240, 5 260 
+             Q 15 250, 25 240 
+             Q 45 225, 65 215" 
+          fill="#6a2ec8"/>
+
+    <!-- Head circle -->
+    <circle cx="155" cy="125" r="22" fill="#b894ff"/>
+    
+    <!-- Eye -->
+    <circle cx="162" cy="119" r="5" fill="#0a0518"/>
+    <circle cx="163" cy="118" r="2" fill="#ffffff"/>
+    
+    <!-- Beak -->
+    <path d="M 173 122 L 195 125 L 173 129 Z" fill="#ffd700"/>
+    
+    <!-- Head highlight -->
+    <path d="M 145 115 Q 155 108, 165 112" stroke="#d4c0ff" stroke-width="1.5" fill="none" opacity="0.6"/>
+    
+    <!-- Accent dots near bird -->
+    <circle cx="250" cy="80" r="2" fill="#ffd700" opacity="0.6"/>
+    <circle cx="265" cy="95" r="1.5" fill="#a278f0" opacity="0.5"/>
+    <circle cx="10" cy="30" r="1.5" fill="#ffd700" opacity="0.4"/>
+    <circle cx="255" cy="170" r="1" fill="#a278f0" opacity="0.3"/>
+  </g>
+
+  <!-- Small decorative bird top-right -->
+  <g transform="translate(1340, 25) scale(0.5)" opacity="0.4">
+    <path d="M 20 30 Q 10 5, 40 0 Q 50 0, 55 10 Q 45 15, 35 25 Q 30 30, 28 40" fill="#a278f0"/>
+    <path d="M 25 40 Q 15 50, 0 60 Q 10 55, 20 48 Q 25 42, 27 38" fill="#7a3ed8"/>
+    <circle cx="38" cy="28" r="6" fill="#b894ff"/>
+    <circle cx="41" cy="26" r="1.5" fill="#0a0518"/>
+  </g>
+
+  <!-- RAYOVIN text with shadow effect -->
+  <!-- Shadow/outline layer -->
+  <g filter="url(#goldShadow)">
+    <text x="55" y="135" font-family="'Courier New', 'DejaVu Sans Mono', monospace" font-size="110" font-weight="900" letter-spacing="4" fill="#664400" stroke="#332200" stroke-width="3">RAYOVIN</text>
+  </g>
+  
+  <!-- AGENT text shadow -->
+  <g filter="url(#goldShadow)">
+    <text x="55" y="248" font-family="'Courier New', 'DejaVu Sans Mono', monospace" font-size="100" font-weight="900" letter-spacing="6" fill="#664400" stroke="#332200" stroke-width="3">AGENT</text>
+  </g>
+
+  <!-- Main RAYOVIN text - two tone effect: top half gold, bottom half darker -->
+  <!-- Top gradient overlay -->
+  <text x="55" y="135" font-family="'Courier New', 'DejaVu Sans Mono', monospace" font-size="110" font-weight="900" letter-spacing="4" fill="url(#goldGrad)" stroke="#cc8800" stroke-width="1">RAYOVIN</text>
+  
+  <!-- The hyphen between lines -->
+  <text x="55" y="200" font-family="'Courier New', monospace" font-size="40" font-weight="bold" fill="#a278f0" opacity="0.7">─────</text>
+
+  <!-- AGENT text -->
+  <text x="55" y="248" font-family="'Courier New', 'DejaVu Sans Mono', monospace" font-size="100" font-weight="900" letter-spacing="6" fill="url(#goldGrad)" stroke="#cc8800" stroke-width="1">AGENT</text>
+
+  <!-- Tagline -->
+  <text x="60" y="310" font-family="'DejaVu Sans', sans-serif" font-size="22" fill="#b894ff" font-weight="300" letter-spacing="2">
+    The Intelligent Persian AI Agent
+  </text>
+  
+  <!-- Persian tagline -->
+  <text x="60" y="345" font-family="'DejaVu Sans', sans-serif" font-size="18" fill="#8a6cc8" font-weight="300" letter-spacing="1">
+    هوش مصنوعی رایوین | نبض آینده جنوب
+  </text>
+  
+  <!-- Bottom accent bar -->
+  <rect x="55" y="365" width="180" height="3" rx="1.5" fill="url(#goldGrad)"/>
+  <rect x="245" y="365" width="60" height="3" rx="1.5" fill="#a278f0" opacity="0.5"/>
+  
+  <!-- Version badge -->
+  <rect x="1240" y="355" width="80" height="24" rx="4" fill="#1a1040" stroke="#a278f0" stroke-width="0.5" opacity="0.7"/>
+  <text x="1245" y="372" font-family="'DejaVu Sans Mono', monospace" font-size="12" fill="#a278f0" opacity="0.6">v0.18.2</text>
+  
+</svg>
